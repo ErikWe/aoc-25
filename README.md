@@ -10,3 +10,6 @@ py ./src/main.py <day> <inputfile>
 
 | Day |✓? |
 | --: | --- |
+| 01 | ★★ |
+| 02 | ★★ |
+ 
