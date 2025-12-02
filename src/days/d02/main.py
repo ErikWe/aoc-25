@@ -40,7 +40,7 @@ def sum_invalid_ids_in_range(id_range, max_two_repetitions):
 
             sub_values = [(id // (math.pow(10, sub_length * i)) % (math.pow(10, sub_length))) for i in range(repetitions)]
 
-            if (all(sub_value == sub_values[0] for sub_value in sub_values)):
+            if all(sub_value == sub_values[0] for sub_value in sub_values):
                 sum += id
                 break
 
