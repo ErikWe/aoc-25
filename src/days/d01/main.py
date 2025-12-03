@@ -33,9 +33,7 @@ def count_zeros(instructions):
     return final_zeros, total_zeros
 
 def extract_instructions(raw_data):
-    instructions = [int(raw_row[1:]) * (1 if raw_row[0] == 'R' else -1) for raw_row in raw_data.splitlines()]
-
-    return instructions
+    return [int(raw_row[1:]) * (1 if raw_row[0] == 'R' else -1) for raw_row in raw_data.splitlines()]
 
 if __name__ == '__main__':
     from utility import parse_args_day, print_results, read_data

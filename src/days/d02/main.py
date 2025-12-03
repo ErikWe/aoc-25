@@ -47,9 +47,7 @@ def sum_invalid_ids_in_range(id_range, max_two_repetitions):
     return sum
 
 def extract_ranges(raw_data):
-    id_ranges = [(int(raw_row.split('-')[0]), int(raw_row.split('-')[1])) for raw_row in raw_data.split(',')]
-
-    return id_ranges
+    return [(int(raw_row.split('-')[0]), int(raw_row.split('-')[1])) for raw_row in raw_data.split(',')]
 
 if __name__ == '__main__':
     from utility import parse_args_day, print_results, read_data
