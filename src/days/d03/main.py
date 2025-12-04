@@ -35,9 +35,9 @@ def find_maximum_bank_joltage(battery_joltages, battery_limit):
     return joltage
 
 def extract_battery_joltages_per_bank(raw_data):
-    return [[int(battery) for battery in raw_row] for raw_row in raw_data.splitlines()]
+    return [[int(raw_battery) for raw_battery in raw_bank] for raw_bank in raw_data.splitlines()]
 
 if __name__ == '__main__':
     from utility import parse_args_day, print_results, read_data
 
-    print_results(solve(read_data(parse_args_day(2).inputfile)))
+    print_results(solve(read_data(parse_args_day(3).inputfile)))

@@ -13,4 +13,5 @@ py ./src/main.py <day> <inputfile>
 | 01 | ★★ |
 | 02 | ★★ |
 | 03 | ★★ |
+| 04 | ★★ |
  
