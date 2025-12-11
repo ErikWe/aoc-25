@@ -3,6 +3,8 @@ import sys
 
 sys.path.append(f'../../..')
 
+binary_combations = {}
+
 def solve(raw_data):
     machines = parse_machines(raw_data)
 
@@ -17,9 +19,7 @@ def find_minimum_light_button_presses(machine):
     if sum(machine[0]) == 0:
         return 0
     
-    combinations = [combination for combination in range(1, pow(2, len(machine[1])))]
-
-    combinations.sort(key=lambda combination: sum_digits(combination, 2))
+    combinations = get_binary_combinations(len(machine[1]))
 
     for combination in combinations:
         light_states = [False] * len(machine[0])
@@ -35,6 +35,18 @@ def find_minimum_light_button_presses(machine):
             return sum_digits(combination, 2)
         
     return -1
+
+def get_binary_combinations(digits):
+    if digits in binary_combations:
+        return binary_combations[digits]
+    
+    combinations = [combination for combination in range(1, pow(2, digits))]
+
+    combinations.sort(key=lambda combination: sum_digits(combination, 2))
+
+    binary_combations[digits] = combinations
+
+    return combinations
 
 def parse_machines(raw_data):
     return [parse_machine(raw_row) for raw_row in raw_data.splitlines()]
