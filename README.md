@@ -19,4 +19,5 @@ py ./src/main.py <day> <inputfile>
 | 07 | ★★ |
 | 08 | ★★ |
 | 09 | ★ |
+| 10 | ★ |
  
